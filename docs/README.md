@@ -34,6 +34,24 @@ cd Dive-into-DL-PyTorch
 docsify serve docs
 ```
 
+### 方法三
+如果你不想安装`docsify-cli`工具，甚至你的电脑上都没有安装`Node.js`，而出于某些原因你又想在本地浏览文档，那么你可以在`docker`容器中运行网页服务。
+
+首先将本项目clone到本地:
+``` shell
+git clone https://github.com/ShusenTang/Dive-into-DL-PyTorch.git
+cd Dive-into-DL-PyTorch
+```
+之后使用如下命令创建一个名称为「d2dl」的`docker`镜像：
+``` shell
+docker build -t d2dl .
+```
+镜像创建好后，运行如下命令创建一个新的容器：
+``` shell
+docker run -dp 3000:3000 d2dl
+```
+最后在浏览器中打开这个地址`http://localhost:3000/#/`，就能愉快地访问文档了。适合那些不想在电脑上装太多工具的小伙伴。
+
 
 ## 目录
 * [简介]()
@@ -112,7 +130,13 @@ docsify serve docs
    * [9.4 锚框](chapter09_computer-vision/9.4_anchor.md)
    * [9.5 多尺度目标检测](chapter09_computer-vision/9.5_multiscale-object-detection.md)
    * [9.6 目标检测数据集（皮卡丘）](chapter09_computer-vision/9.6_object-detection-dataset.md)
-   * 待更新...
+   - [ ] 9.7 单发多框检测（SSD）
+   * [9.8 区域卷积神经网络（R-CNN）系列](chapter09_computer-vision/9.8_rcnn.md)
+   * [9.9 语义分割和数据集](chapter09_computer-vision/9.9_semantic-segmentation-and-dataset.md)
+   - [ ] 9.10 全卷积网络（FCN）
+   * [9.11 样式迁移](chapter09_computer-vision/9.11_neural-style.md)
+   - [ ] 9.12 实战Kaggle比赛：图像分类（CIFAR-10）
+   - [ ] 9.13 实战Kaggle比赛：狗的品种识别（ImageNet Dogs）
 * 10\. 自然语言处理
    * [10.1 词嵌入（word2vec）](chapter10_natural-language-processing/10.1_word2vec.md)
    * [10.2 近似训练](chapter10_natural-language-processing/10.2_approx-training.md)
@@ -146,6 +170,6 @@ English Version: [Dive into Deep Learning](https://d2l.ai/) | [Github Repo](http
     title={Dive into Deep Learning},
     author={Aston Zhang and Zachary C. Lipton and Mu Li and Alexander J. Smola},
     note={\url{http://www.d2l.ai}},
-    year={2019}
+    year={2020}
 }
 ```
